@@ -1,0 +1,30 @@
+CONFIG_NAME: '3stages'
+
+DATASET_NAME: 'birds'
+EMBEDDING_TYPE: 'cnn-rnn'
+DATA_DIR: '../data/birds'
+GPU_ID: '0'
+WORKERS: 4  # 4
+
+TREE:
+    BRANCH_NUM: 3
+
+
+TEST:
+    B_EXAMPLE: True
+
+
+TRAIN:
+    FLAG: False
+    NET_G: '../models/birds_3stages/netG_147400.pth'  # only if TRAIN.FLAG: False
+#    NET_G: ''  # if FLAG: True
+    BATCH_SIZE: 12
+
+
+GAN:
+    EMBEDDING_DIM: 128
+    DF_DIM: 64
+    GF_DIM: 64
+    Z_DIM: 100
+    R_NUM: 2
+    B_CONDITION: True
